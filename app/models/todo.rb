@@ -8,6 +8,6 @@ class Todo < ApplicationRecord
   validates :title, presence: true
 
   def set_defaults
-    self[:completed] = false
+    self.completed = false
   end
 end

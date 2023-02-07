@@ -1,0 +1,34 @@
+<div class="relative overflow-x-auto mt-10">
+  <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <tr>
+        <th scope="col" class="px-6 py-3">
+          User name
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Todos
+        </th>
+        <th scope="col" class="px-6 py-3">
+          Todo status
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users_with_todos.each do |user| %>
+        <% user.todos.each do |todo| %>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= user.name %>
+            </td>
+            <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= todo.title %>
+            </td>
+            <td scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+              <%= todo.completed == false ? 'To do' : 'Done' %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>

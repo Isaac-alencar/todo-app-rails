@@ -42,3 +42,5 @@ group :development do
 end
 
 gem 'importmap-rails', '~> 1.1'
+
+gem "devise", "~> 4.8"

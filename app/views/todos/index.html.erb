@@ -1,4 +1,5 @@
-<div class="h-1/2 w-full max-w-[50%]">
+<% if user_signed_in? %>
+  <div class="h-1/2 w-full max-w-[50%]">
   <h2 class="text-2xl font-bold text-slate-200 my-5 text-center">Todo List
   </h2>
 
@@ -42,4 +43,8 @@
       </ul>
     <% end %>
   </div>
-</div>
+  </div>
+
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, class: "navbar-link"  %>
+<% end %>

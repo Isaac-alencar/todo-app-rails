@@ -2,11 +2,11 @@
 
 class TodosController < ApplicationController
   def index
-    @todos = Todo.order(created_at: :desc).all
+    @todos = Todo.order(created_at: :desc).where(user_id: current_user.id)
   end
 
   def create
-    user = User.first
+    user = User.find(current_user.id)
     @todo = user.todos.build(todo_params)
 
     @todo.save || flash[:notice] = @todo.errors.full_messages

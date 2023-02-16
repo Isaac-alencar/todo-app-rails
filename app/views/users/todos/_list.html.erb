@@ -1,0 +1,5 @@
+<% users_with_todos.each do |user| %>
+    <% user.todos.each do |todo| %>
+       <%= render partial: 'users/todos/item', locals: { user: , todo: } %>
+    <% end %>
+<% end %>
